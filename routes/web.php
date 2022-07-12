@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/create', [App\Http\Controllers\HomeController::class, 'create'])->name('create');
-Route::post('/store',[App\Http\Controllers\HomeController::class,'store'])->name('stroe');
+
+
+// 色々なactionの書き方を学んでいますので悪く見ないでくださいT.T
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/create', [HomeController::class, 'create'])->name('create');
+Route::post('/store',[HomeController::class,'store'])->name('stroe');
+Route::get('/edit/{id}',[HomeController::class,'edit'])->name('edit');
+Route::post('/update/{id}','HomeController@update')->name('update');

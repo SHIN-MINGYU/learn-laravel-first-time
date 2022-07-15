@@ -29,4 +29,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/create', [HomeController::class, 'create'])->name('create');
 Route::post('/store',[HomeController::class,'store'])->name('stroe');
 Route::get('/edit/{id}',[HomeController::class,'edit'])->name('edit');
-Route::post('/update/{id}','HomeController@update')->name('update');
+Route::post('/update/{id}',[HomeController::class,'update'])->name('update');

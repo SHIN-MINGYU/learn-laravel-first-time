@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,4 @@ Route::get('/create', [HomeController::class, 'create'])->name('create');
 Route::post('/store',[HomeController::class,'store'])->name('stroe');
 Route::get('/edit/{id}',[HomeController::class,'edit'])->name('edit');
 Route::post('/update/{id}',[HomeController::class,'update'])->name('update');
+Route::post('/delete/{id}',[HomeController::class,'delete'])->name('delete');
